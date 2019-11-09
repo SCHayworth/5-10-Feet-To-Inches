@@ -11,22 +11,20 @@
 # Initialize a constant for the number of inches in one foot
 INCHES_PER_FOOT = 12
 
+# Initialize the repeat flag with a default value of True
+do_again = True
+
 # Define the main function.
 def main():
-    # Set the repeat flag to True
-    do_again = True
+    # Get a number of feet from the user and then pass the input to the
+    #   feet_to_inches function.
+    feet = float(input('Enter the number of feet: '))
+    inches = feet_to_inches(feet)
 
-    while do_again == True:
-        # Get a number of feet from the user and then pass the input to the
-        #   feet_to_inches function.
-        feet = float(input('Enter the number of feet: '))
-        inches = feet_to_inches(feet)
+    # Print the result to the screen.
+    print(f'{feet} feet = {inches} inches')
 
-        # Print the result to the screen.
-        print(f'{feet} feet = {inches} inches')
-
-        # Check whether or not the program should run again.
-        ask_ok()
+    global do_again = ask_ok()
 
 # Define the feet_to_inches function.
 def feet_to_inches(feet):
@@ -50,5 +48,7 @@ def ask_ok(prompt, retries=4, reminder='Please answer y/n.'):
             raise ValueError('invalid user response')
         print(reminder)
 
-# Call the main function to exeute the program.
-main()
+# As long as the repeat flag is True, loop the main function to exeute the
+#   program.
+while do_again == True:
+    main()
