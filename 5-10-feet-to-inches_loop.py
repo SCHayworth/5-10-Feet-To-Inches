@@ -12,7 +12,6 @@
 INCHES_PER_FOOT = 12
 
 # Initialize the repeat flag with a default value of True
-do_again = True
 
 # Define the main function.
 def main():
@@ -22,9 +21,7 @@ def main():
     inches = feet_to_inches(feet)
 
     # Print the result to the screen.
-    print(f'{feet} feet = {inches} inches')
-
-    global do_again = ask_ok()
+    print(f'{feet:,} feet = {inches:,} inches')
 
 # Define the feet_to_inches function.
 def feet_to_inches(feet):
@@ -34,7 +31,7 @@ def feet_to_inches(feet):
     return inches
 
 # Define the ask_ok function
-def ask_ok(prompt, retries=4, reminder='Please answer y/n.'):
+def ask_ok(prompt, reminder='Please answer y/n.'):
     # Asks the user if they would like to run the program again, and returns
     #   False if they do not.
     while True:
@@ -43,12 +40,11 @@ def ask_ok(prompt, retries=4, reminder='Please answer y/n.'):
             return True
         if ok in ('n', 'no', 'nop', 'nope'):
             return False
-        retries = retries - 1
-        if retries < 0:
-            raise ValueError('invalid user response')
         print(reminder)
 
 # As long as the repeat flag is True, loop the main function to exeute the
 #   program.
+do_again = True
 while do_again == True:
     main()
+    do_again = ask_ok('Would you like to run the program again (y/n)? ')
