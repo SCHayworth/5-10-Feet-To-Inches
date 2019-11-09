@@ -19,7 +19,7 @@ def main():
     inches = feet_to_inches(feet)
 
     # Print the result to the screen.
-    print(f'{feet} = {inches} inches')
+    print(f'{feet} feet = {inches} inches')
 
 # Define the feet_to_inches function.
 def feet_to_inches(feet):
@@ -29,4 +29,4 @@ def feet_to_inches(feet):
     return inches
 
 # Call the main function to exeute the program.
-main()    
+main()
