@@ -10,4 +10,16 @@
 
 ## Pseudocode
 ### Main Function
-        START
+    START
+      INPUT feet
+      SET inches to the return value of feet_to_inches(feet)
+      PRINT the number of inches.
+    END
+
+### feet_to_inches Function
+    START
+      PASS IN: feet
+      CALCULATE inches
+        multiply feet by 12
+      RETURN inches
+    END
