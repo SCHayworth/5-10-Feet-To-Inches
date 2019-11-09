@@ -8,7 +8,10 @@
 # Program calculates how many inches are in a given number of feet using a
 #   value-returning function, and prints the result to the screen.
 
-# Define the main function
+# Initialize a constant for the number of inches in one foot
+INCHES_PER_FOOT = 12
+
+# Define the main function.
 def main():
     # Get a number of feet from the user and then pass the input to the
     #   feet_to_inches function.
@@ -18,4 +21,12 @@ def main():
     # Print the result to the screen.
     print(f'{feet} = {inches} inches')
 
-    
+# Define the feet_to_inches function.
+def feet_to_inches(feet):
+    # Accepts feet and multiplies it by 12 to convert it to inches. Then
+    #  returns the number of inches.
+    inches = feet * INCHES_PER_FOOT
+    return inches
+
+# Call the main function to exeute the program.
+main()    
